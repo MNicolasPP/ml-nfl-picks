@@ -1,0 +1,44 @@
+project:
+  name: ml-nfl-sprint0
+  random_seed: 42
+  preferred_model: lightgbm
+paths:
+  data_dir: data
+  raw: data/raw
+  external: data/external
+  interim: data/interim
+  processed: data/processed
+  artifacts: models/artifacts
+data_sources:
+  box_scores: data/raw/box_scores.csv
+  vegas_lines: data/external/vegas_lines.csv
+  weather: data/external/weather.csv
+target:
+  name: outcome_yards
+  type: regression
+  prop_type: receiving
+schema:
+  columns:
+  - game_id
+  - season
+  - week
+  - team
+  - opp
+  - player_id
+  - player
+  - position
+  - routes
+  - targets
+  - target_share
+  - air_yards
+  - rush_att
+  - snap_pct
+  - team_pass_rate_neutral
+  - team_pace
+  - opp_vs_pass_epa
+  - opp_vs_run_epa
+  - vegas_total
+  - vegas_spread
+  - weather_temp
+  - weather_wind
+  - outcome_yards
